@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 
 /**
  * Сервіс для керування замовленнями. Усі замовлення зберігаються в пам'яті
- * (ключ — id замовлення, порядок додавання зберігається).
  */
 public class OrderService {
 
@@ -76,7 +75,7 @@ public class OrderService {
                 .collect(Collectors.toCollection(LinkedHashSet::new));
     }
 
-    /** Замовлення, відсортовані за загальною вартістю — від найдешевшого до найдорожчого. */
+    /** Замовлення, відсортовані за загальною вартістю - від найдешевшого до найдорожчого. */
     public List<Order> sortOrdersByTotalPrice() {
         List<Order> sorted = new ArrayList<>(orders.values());
         sorted.sort(Comparator.comparingDouble(this::total));
