@@ -12,14 +12,13 @@ public class Order {
     public Order(long id, Customer customer, List<Product> products, OrderStatus status) {
         this.id = id;
         this.customer = customer;
-        this.products = new ArrayList<>(products); // захисна копія
+        this.products = new ArrayList<>(products);
         this.status = status;
     }
 
     public long getId() { return id; }
     public Customer getCustomer() { return customer; }
 
-    /** Повертає копію списку, щоб зовні не можна було змінити склад замовлення. */
     public List<Product> getProducts() { return new ArrayList<>(products); }
 
     public OrderStatus getStatus() { return status; }
